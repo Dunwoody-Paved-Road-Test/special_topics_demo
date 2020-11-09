@@ -53,13 +53,13 @@ pipeline {
                         // this is if Jenkins detects more than one new commit during a scan. For example, two users commit 
                         // somehting at the same time, or within one minute of each other
                         if (check1 == check2) {
-                            emailBody = 'Your static html is now available at http://98.240.222.112:49160/static-web/' + workspace + '/' + userName
+                            emailBody = 'Your static html is now available at http://98.240.222.112:49160/static-web/' + workspace + '/' + userName + '/'
                             emailext body: emailBody, subject: 'Paved-Road Auto Notification', to: emailList[i]
                         }
                         // if the first iteration of the loop
                         if (i == 0) {
                             // html validator goes here
-                            emailBody = 'Your static html is now available at http://98.240.222.112:49160/static-web/'+ workspace + '/' + userName
+                            emailBody = 'Your static html is now available at http://98.240.222.112:49160/static-web/'+ workspace + '/' + userName + '/'
                             emailext body: emailBody, subject: 'Paved-Road Auto Notification', to: emailList[i]
 
                             // validate html
